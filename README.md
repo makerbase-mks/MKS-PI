@@ -30,7 +30,7 @@ Makerbase provides a complete Klipper firmware transplanted based on the Armbian
 - Wireless network card or network cable
 - Type_C cable
 ### Software preparation
-- System file download link:
+- System image download link: https://drive.google.com/drive/folders/1tTuSvF9OL2qtPXElau8YOXn2sWbdxa9e?usp=sharing
 - Install balenaEtcher v1.5 and above, download link:
 [https://www.balena.io/etcher/](https://www.balena.io/etcher/) 
 - Install putty, download link: [https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
@@ -52,8 +52,8 @@ MKS PI supports most of the commonly used USB WiFi Adapters are supported, but t
 Insert the USB WiFi adapter to one of the 3 usb ports of MKS PI, you have two ways to config it to connect to your router.
 #### Through the config file on the TF card
 - Before power on, insert the TF card to the PC with TF card reader, it would generate two disks on PC
-- Open the "Boot" disk, find the config file "xxxx" and open it with text editing software (e.g. notepad, notepad++, etc.)
-- Modify the SSID and Password according to your actual router, save the config file 
+- Open the "Boot" disk, find the config file "**wpa_supplicant-wlan0.conf**" and open it with text editing software (e.g. notepad, notepad++, etc.)
+- Modify the ssid and psk according to your router, save the config file 
 - Remove the TF card from the PC, and insert it to the MKS PI
 It would connect to your router automatically.
 #### Through the serial software(we using Putty to describe below) 
