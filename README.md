@@ -90,4 +90,71 @@ Putty is a famous tool, you can use either SSH or Serial to connect to the MKS P
    > their origin passwords are the same: makerbase  
 - After enter the user and password, you can enter the system now.
 
+## Connection between MKS PI and motherboard
+You can use 3 USB ports and a uart to connect MKS PI and your motherboard.  
+### USB connection
+Most 3D printing motherboards have a USB port converted from the serial port. Use a usb cable to connect it to one of the three B-type USB ports of the MKS PI.  
+Find the device name of the USB port, login MKS PI from Putty or other serial software and type:   
+`ls /dev/serial/by-id/*`  
+It will display the name like below(confirm your USB connection is ok):  
+`/dev/serial/by-id/usb-Klipper_stm32f407xx_4D0045001850314335393520-if00`      
+Copy the device name to the "[mcu]" segment on "printer.cfg" file of Klipper :   
+`[mcu]  
+  serial:/dev/serial/by-id/usb-Klipper_stm32f407xx_4D0045001850314335393520-if00`    
+### UART connection
+You can also use the uart0 on MKS PI to connect your motherboard(Make sure your motherboard has the uart pins lead out).      
+On the "printer.cfg" file of Klipper, the serial should be "/dev/ttyS0":   
+`[mcu] 
+  serial:/dev/ttyS0`  
+  
+## ADXL345 connection and configuration
+If you want to use the ADXL345, it is very easy to connect on MKS PI:  
+![DDW](https://user-images.githubusercontent.com/12979070/176198630-f2537209-26f1-4e83-bb51-d7be60269dc0.jpg)
+
+The MKS PI image has the acceleration calculation library and the dependent library installed by default, no additional configuration is required, just configure the ADXL345 and test position parameters in the "printer.cfg" file.
+1. Configure adxl345 in the configuration file, copy the following parameters to the "printer.cfg" file  
+`[mcu rpi]  
+serial: /tmp/klipper_host_mcu    
+[adxl345]  
+cs_pin: rpi:None  
+spi_bus: spidev0.2`  
+
+2. Save and restart Klipper, and send the query command after the web interface does not report an error：  
+`ACCELEROMETER_QUERY`  
+
+ Now the acceleration sensor data can be received. The data is similar to the following:  
+ `Recv: // adxl345 values (x, y, z): 430.619210, 831.432400, 8718.156800...`  
+
+3. Configure the test position of adxl345, generally installed in the middle of the platform  
+`[resonance_tester]  
+accel_chip: adxl345  
+probe_points:  
+    115, 115, 20  # an example`  
+
+4. Test acceleration and configure input_shaper data  
+Before the test, first increase the acceleration configuration of the printer (you can change it to a smaller value after the test):  
+`[printer]  
+max_accel: 7000  
+max_accel_to_decel: 7000`  
+
+5. If there is an input_shaper function parameter in the configuration file, you need to send an instruction to turn it off:  
+`SET_INPUT_SHAPER SHAPER_FREQ_X=0 SHAPER_FREQ_Y=0`  
+
+6. Then send the auto test configuration command to start testing the vibration:  
+`SHAPER_CALIBRATE` 
+
+7. After the test, it will return the recommended configuration method and configuration value of the x-axis and y-axis, configure the value in the configuration file, then save and restart, the configuration is similar to the following:  
+`[input_shaper]  
+shaper_type_x = 3hump_ei  
+shaper_freq_x = 52.4  
+shaper_type_y = 2hump_ei  
+shaper_freq_y = 37.5`  
+
+## USB camera connection and configuration
+The default image of MKS PI has already installed MJPG-Streamer and enable the USB camera. MKS PI supports most of the commonly used USB cameras(but not guaranteed). Normally, just connect your USB camera to one of B-Type USB port on MKS PI, you will see the preview video on the Fluidd interface.   
+If you don't want to use the USB camera, you had better to disable it to reduce CPU load:  
+Enter the setting item on the Fluidd interface -> camera -> default -> disable
+
+
+
    
