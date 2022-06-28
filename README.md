@@ -57,7 +57,7 @@ Insert the USB WiFi adapter to one of the 3 usb ports of MKS PI, you have two wa
 - Remove the TF card from the PC, and insert it to the MKS PI
 It would connect to your router automatically.
 #### Through the serial software(we using Putty to describe below) 
-- Prepare putty according to the [steps](https://github.com/makerbase-mks/MKS-PI/edit/main/README.md#using-serial-software-on-pcwe-using-putty-to-describe-below)
+- Prepare putty according to the [steps](https://github.com/makerbase-mks/MKS-PI#using-serial-software-on-pcwe-using-putty-to-describe-below)
 - Enter the command “nmtui” to connect to the network. 
 - Select “Activate a connection”, select the wifi and enter the password to connect.  
 ![EEEEEE](https://user-images.githubusercontent.com/12979070/175969814-e96acf80-4c83-4bf0-917d-ebe44bbefaed.png)
