@@ -71,6 +71,11 @@ Enter the command “ip a” and view the IP
 #### From KlipperScreen 
 If you have a PI-LCD or HDMI screen connected with MKS PI, it would run KlipperScreen after system boot. You can find your IP address on the "Config"->WiFi
 
+## Enter Fluidd interface
+After connect the MKS PI to the network, you can directly enter the IP address of MKS PI with your PC's browser, and you can enter fluidd interface(Makerbase's image has installed fluidd, of cause you can install other interface).  
+![微信图片_20220628192455](https://user-images.githubusercontent.com/12979070/176167313-b4c58d8a-ccd9-48b0-8cca-9598549ddddd.png)
+
+
 ## Using Serial software on PC(we using Putty to describe below)  
 Putty is a famous tool, you can use either SSH or Serial to connect to the MKS PI.  
 - Connect the MKS PI with the TYPE-C cable to the PC, supply power to the PI, check the COM port in the device manager of the PC, and then open Putty
