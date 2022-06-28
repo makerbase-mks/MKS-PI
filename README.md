@@ -90,7 +90,7 @@ Putty is a famous tool, you can use either SSH or Serial to connect to the MKS P
    > their origin passwords are the same: makerbase  
 - After enter the user and password, you can enter the system now.
 
-## Connection between MKS PI and motherboard
+## Connection MKS PI with motherboard
 You can use 3 USB ports and a uart to connect MKS PI and your motherboard.  
 ### USB connection
 Most 3D printing motherboards have a USB port converted from the serial port. Use a usb cable to connect it to one of the three B-type USB ports of the MKS PI.  
