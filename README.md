@@ -104,7 +104,7 @@ Copy the device name to the "[mcu]" segment on "printer.cfg" file of Klipper :
 ### UART connection
 You can also use the uart0 on MKS PI to connect your motherboard(Make sure your motherboard has the uart pins lead out).      
 On the "printer.cfg" file of Klipper, the serial should be "/dev/ttyS0":   
-`[mcu] 
+`[mcu]  
   serial:/dev/ttyS0`  
   
 ## ADXL345 connection and configuration
