@@ -1,7 +1,8 @@
 # MKS-PI
 As we all know, the Klipper firmware has the advantages of high printing speed, high precision, and the ability to use the web page to control the printer, etc. MKS PI is a high-end microcomputer board designed by makerbase to replace the Raspberry Pi for the convenience of 3D printing users to use the Klipper firmware. The size, mounting holes, and most interface locations are also compatible with Raspberry Pi 3B. 
 In terms of hardware, MKS PI has a powerful 4-core 64-bit SOC onboard, with 1GBytes of DDR3 memory, supports HDMI screen interface and PI-TS35 screen interface, provides Ethernet port, 3-channel USB interfaces (can be connected to a 3D printer main board, USB Wireless network card, USB camera, U disk, USB keyboard and mouse, etc.);   
-In terms of software, Makerbase provides a complete Klipper firmware transplanted based on the Armbian desktop system, and directly supports klipperScreen. Users only need to download the image file provided by Makerbase, burn it to the TF card, without a lot of construction work, use the usb port or serial port to connect your main board, configure the parameters on the webpage, and you can use the Klipper firmware happily!  
+In terms of software, Makerbase provides a complete Klipper firmware transplanted based on the Armbian desktop system, and directly supports klipperScreen. Users only need to download the image file provided by Makerbase, burn it to the TF card, without a lot of construction work, use the usb port or serial port to connect your main board, configure the parameters on the webpage, and you can use the Klipper firmware happily!   
+Aliexpress Store Link: https://www.aliexpress.com/item/3256804231556479.html?spm=a2g0o.store_pc_home.slider_165457030.0&gatewayAdapt=4itemAdapt  
 
 ![未命名1656336496](https://user-images.githubusercontent.com/12979070/175953356-ed7bb300-acaa-459e-89b1-6b46a0ae0d55.png)
 
