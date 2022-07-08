@@ -50,7 +50,7 @@ Format TF card to FAT32 format before flash system files
 ### Using the Ethernet  
 Just set your router to using DHCP, plug the network cable into the MKS PI, done.
 ### Using USB WiFi Adapter
-MKS PI supports most of the commonly used USB WiFi Adapters are supported, but they are not guaranteed to be available. According to the current testing experience, it is not recommended to use adapters based on RTL8188GU(RTL8710B)(VID:PID = 0x0BDA:0xB711), it has been supported on MKS PI, but it's driver takes a lot of CPU load(about 27% in our test). Other adapters like the one based on RTL8188CUS(VID:PID = 0bda:8176) have a perfect perfomance. 
+MKS PI supports USB WiFi Adapter, but not every type is guaranteed to be available. Now, we the types we have tested available include those based on RTL8188CUS(VID:PID = 0bda:8176)/RTL8188EUS(VID:PID = 0bda:8179)/RTL8188GU(RTL8710B)/(VID:PID = 0x0BDA:0xB711). According to the current testing experience, it is not recommended to use adapters based on RTL8188GU(RTL8710B), it has been supported on MKS PI, but it's driver takes a lot of CPU load(about 27% in our test). Other adapters like the one based on RTL8188CUS/RTL8188EUS have a perfect perfomance. 
 Insert the USB WiFi adapter to one of the 3 usb ports of MKS PI, you have two ways to config it to connect to your router.
 #### Through the config file on the TF card
 - Before power on, insert the TF card to the PC with TF card reader, it would generate two disks on PC
