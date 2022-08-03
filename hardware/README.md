@@ -5,3 +5,4 @@
   - MKS Pi V1.0_003 BOTTOM.pdf
   - MKS Pi V1.0_003 SIZE-TOP.pdf
   - MKS Pi V1.0_003 SIZE-BOTTOM.pdf
+  - MKS Pi V1.0_003 PIN.pdf
