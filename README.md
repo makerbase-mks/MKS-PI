@@ -218,3 +218,16 @@ The MKS PI image has the acceleration calculation library and the dependent libr
 The default image of MKS PI has already installed MJPG-Streamer and enable the USB camera. MKS PI supports most of the commonly used USB cameras(but not guaranteed). Normally, just connect your USB camera to one of B-Type USB port on MKS PI, you will see the preview video on the Fluidd interface.   
 If you don't want to use the USB camera, you had better to disable it to reduce CPU load:  
 Enter the setting item on the Fluidd interface -> camera -> default -> disable
+
+## How to modify the device tree file
+Maybe someone like to make some customized configration on device tree file,  
+- SSH to login to the PI shell  
+- Backup the /boot/dtb/rockchip/rk3328-roc-cc.dtb file, for example:  
+ ```sudo cp /boot/dtb/rockchip/rk3328-roc-cc.dtb /boot/dtb/rockchip/rk3328-roc-cc.dtb.bak```  
+- Decompile the dtc file to dts file:  
+```sudo dtc -I dtb -O dts -o rk3328-roc-cc.dts /boot/dtb/rockchip/rk3328-roc-cc.dtb```  
+- Modify the dts file just generated as you want, for example change the rotation of the lcd...  
+- Compile the dts file to overlay the origin one  
+```dtc -I dts -O dtb -o rk3328-roc-cc.dtb /boot/dtb/rockchip/rk3328-roc-cc.dts  ```  
+- Reboot the system  
+
