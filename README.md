@@ -231,3 +231,6 @@ Maybe someone like to make some customized configration on device tree file,
 ```dtc -I dts -O dtb -o rk3328-roc-cc.dtb /boot/dtb/rockchip/rk3328-roc-cc.dts  ```  
 - Reboot the system  
 
+## Use with the tool header modules
+Support using MKS PI with the tool header modules like MKS THR36/42, more details refer to : https://github.com/makerbase-mks/MKS-THR36-THR42-UTC
+
