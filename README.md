@@ -229,7 +229,13 @@ Maybe someone like to make some customized configration on device tree file,
 - Modify the dts file just generated as you want, for example change the rotation of the lcd...  
 - Compile the dts file to overlay the origin one  
 ```dtc -I dts -O dtb -o rk3328-roc-cc.dtb /boot/dtb/rockchip/rk3328-roc-cc.dts  ```  
-- Reboot the system  
+- Reboot the system 
+
+## How to rotate 180° for the TS35 display 
+Should change the dts file of rk3328-roc-cc.dtb, we have made one [here](), for you can just download it, and then:
+- SSH to login to the PI shell  
+- Copy the downloaded rk3328-roc-cc.dtb to the direction of "/boot/dtb/rockchip" on MKS PI using software like WinSCP
+- Reboot the system 
 
 ## Use with the tool header modules
 Support using MKS PI with the tool header modules like MKS THR36/42, more details refer to : https://github.com/makerbase-mks/MKS-THR36-THR42-UTC
