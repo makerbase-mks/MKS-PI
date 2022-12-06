@@ -232,7 +232,7 @@ Maybe someone like to make some customized configration on device tree file,
 - Reboot the system 
 
 ## How to rotate 180° for the TS35 display 
-Should change the dts file of rk3328-roc-cc.dtb, we have made one [here](), for you can just download it, and then:
+Should change the dts file of rk3328-roc-cc.dtb, we have made one [here](https://github.com/makerbase-mks/MKS-PI/tree/main/dts_for_rotate_180), for you can just download it, and then:
 - SSH to login to the PI shell  
 - Copy the downloaded rk3328-roc-cc.dtb to the direction of "/boot/dtb/rockchip" on MKS PI using software like WinSCP
 - Reboot the system 
